@@ -15,7 +15,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE /*hInstance*/, _In_opt_ HINSTANCE /*hPrevIn
 	}
 	catch (std::exception& e)
 	{
-		MessageBoxA(NULL, e.what(), "", MB_OK | MB_ICONEXCLAMATION);
+		MessageBoxA(NULL, e.what(), "Standard Exception", MB_OK | MB_ICONEXCLAMATION);
 	}
 	catch (...)
 	{

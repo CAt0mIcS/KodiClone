@@ -17,13 +17,13 @@ Window::Window()
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = 0;
 	wc.lpszMenuName = 0;
-	wc.lpszClassName = L"MAINWINDOWCLASS";
+	wc.lpszClassName = m_ClassName;
 	wc.hIconSm = 0;
-
+	
 	RegisterClassEx(&wc);
-	m_hWnd = CreateWindowEx(0, L"MAINWINDOWCLASS", L"Kodi", WS_POPUP, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, 0, 0, 0, this);
+	m_hWnd = CreateWindowEx(0, m_ClassName, L"Kodi", WS_POPUP, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, 0, 0, 0, this);
 	if (!m_hWnd)
-		return;
+		KODI_THROW_LAST_WINAPI_EXCEPTION();
 
 	ShowWindow(m_hWnd, SW_MAXIMIZE);
 }
@@ -48,6 +48,7 @@ LRESULT Window::HandleMessageSetup(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM l
 	{
 		CREATESTRUCT* pCreate = (CREATESTRUCT*)lParam;
 		Window* window = (Window*)pCreate->lpCreateParams;
+
 		SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)window);
 		SetWindowLongPtr(hWnd, GWLP_WNDPROC, (LONG_PTR)HandleMessagePass);
 

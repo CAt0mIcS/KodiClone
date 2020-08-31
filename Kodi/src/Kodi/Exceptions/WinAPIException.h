@@ -21,5 +21,5 @@ private:
 };
 
 
-#define KODI_THROW_WINAPI_EXCEPTION(hr) throw WinAPIException(__LINE__, __FILE__, hr)
-#define KODI_THROW_LAST_WINAPI_EXCEPTION(hr) throw WinAPIException(__LINE__, __FILE__, GetLastError())
+#define KODI_THROW_WINAPI_EXCEPTION(hr)		throw WinAPIException(__LINE__, __FILE__, hr)
+#define KODI_THROW_LAST_WINAPI_EXCEPTION()	throw WinAPIException(__LINE__, __FILE__, GetLastError())

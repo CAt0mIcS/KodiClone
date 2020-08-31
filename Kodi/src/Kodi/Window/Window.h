@@ -33,5 +33,6 @@ private:
 	LRESULT CALLBACK HandleMessage(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 private:
 	HWND m_hWnd;
+	static constexpr const wchar_t* const m_ClassName = L"MAINWINDOWCLASS";
 };
 
