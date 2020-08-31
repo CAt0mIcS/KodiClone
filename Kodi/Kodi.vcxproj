@@ -163,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Kodi\Exceptions\KodiException.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -172,11 +173,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Kodi\Window\Window.cpp" />
+    <ClCompile Include="src\Kodi\Exceptions\WinAPIException.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Kodi\Exceptions\KodiException.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\Kodi\Window\Window.h" />
+    <ClInclude Include="src\Kodi\Exceptions\WinAPIException.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\res\Cursor.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
